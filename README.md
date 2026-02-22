@@ -115,7 +115,7 @@ This function is built on three specialized sub-functions:
    Ranks all photos by how authentically they capture genuine, unguarded moments
 
 2. **evaluate-emotional-resonance** (Vector Task)
-   Repository: https://github.com/ObjectiveAI-claude-code-1/{{ .Task1 }}
+   Repository: https://github.com/ObjectiveAI-claude-code-1/evaluate-cat-emotional-connection
    Ranks all photos by their emotional impact and viewer connection
 
 3. **recognize-personality** (Scalar Task)

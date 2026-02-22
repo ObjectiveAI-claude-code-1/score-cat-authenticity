@@ -19,38 +19,10 @@
       }
     },
     {
-      "type": "placeholder.vector.function",
-      "input_schema": {
-        "type": "array",
-        "description": "Array of cat photos to rank by emotional resonance",
-        "minItems": 2,
-        "items": {
-          "type": "object",
-          "properties": {
-            "url": {
-              "type": "string"
-            },
-            "title": {
-              "type": "string"
-            },
-            "photographer": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "url"
-          ]
-        }
-      },
-      "output_length": {
-        "$starlark": "len(input)"
-      },
-      "input_split": {
-        "$starlark": "[[photo] for photo in input]"
-      },
-      "input_merge": {
-        "$starlark": "[item[0] for item in input]"
-      },
+      "type": "vector.function",
+      "owner": "ObjectiveAI-claude-code-1",
+      "repository": "evaluate-cat-emotional-connection",
+      "commit": "ac7fcc66c20f8052fa0a6067a92ef32d4abf0492",
       "input": {
         "$starlark": "input"
       },
