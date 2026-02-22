@@ -111,15 +111,15 @@ This function is built on three specialized sub-functions:
 ### Sub-Functions
 
 1. **assess-authenticity** (Vector Task)
-   Repository: https://github.com/{{ .Owner }}/{{ .Task0 }}
+   Repository: https://github.com/ObjectiveAI-claude-code-1/rank-cat-candids
    Ranks all photos by how authentically they capture genuine, unguarded moments
 
 2. **evaluate-emotional-resonance** (Vector Task)
-   Repository: https://github.com/{{ .Owner }}/{{ .Task1 }}
+   Repository: https://github.com/ObjectiveAI-claude-code-1/{{ .Task1 }}
    Ranks all photos by their emotional impact and viewer connection
 
 3. **recognize-personality** (Scalar Task)
-   Repository: https://github.com/{{ .Owner }}/{{ .Task2 }}
+   Repository: https://github.com/ObjectiveAI-claude-code-1/score-cat-personality
    Scores each photo for how well it reveals individual personality traits
 
 Each sub-function specializes in one dimension of authentic cat photography, and their combined evaluations produce the final ranking. The function uses weighted averaging of the three task outputs to create a comprehensive assessment of each photo's authenticity and charm.
