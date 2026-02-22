@@ -1,0 +1,155 @@
+{
+  "type": "vector.function",
+  "input_schema": {
+    "type": "array",
+    "description": "An array of cat photos to be ranked",
+    "minItems": 2,
+    "maxItems": 100,
+    "items": {
+      "type": "object",
+      "description": "A cat photo with its URL and optional metadata",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The URL or file path to the cat photo image"
+        },
+        "title": {
+          "type": "string",
+          "description": "An optional title or label for the photo"
+        },
+        "photographer": {
+          "type": "string",
+          "description": "An optional credit to the photographer"
+        }
+      },
+      "required": [
+        "url"
+      ]
+    }
+  },
+  "output_length": {
+    "$starlark": "len(input)"
+  },
+  "input_split": {
+    "$starlark": "[[photo] for photo in input]"
+  },
+  "input_merge": {
+    "$starlark": "[photo for subarray in input for photo in subarray]"
+  },
+  "tasks": [
+    {
+      "type": "placeholder.vector.function",
+      "input_schema": {
+        "type": "array",
+        "description": "Array of cat photos to rank by authenticity",
+        "minItems": 2,
+        "items": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "photographer": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        }
+      },
+      "output_length": {
+        "$starlark": "len(input)"
+      },
+      "input_split": {
+        "$starlark": "[[photo] for photo in input]"
+      },
+      "input_merge": {
+        "$starlark": "[item[0] for item in input]"
+      },
+      "input": {
+        "$starlark": "input"
+      },
+      "output": {
+        "$starlark": "output"
+      }
+    },
+    {
+      "type": "placeholder.vector.function",
+      "input_schema": {
+        "type": "array",
+        "description": "Array of cat photos to rank by emotional resonance",
+        "minItems": 2,
+        "items": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "photographer": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        }
+      },
+      "output_length": {
+        "$starlark": "len(input)"
+      },
+      "input_split": {
+        "$starlark": "[[photo] for photo in input]"
+      },
+      "input_merge": {
+        "$starlark": "[item[0] for item in input]"
+      },
+      "input": {
+        "$starlark": "input"
+      },
+      "output": {
+        "$starlark": "output"
+      }
+    },
+    {
+      "type": "placeholder.scalar.function",
+      "input_schema": {
+        "type": "object",
+        "description": "A single cat photo to score for individual personality expression",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "photographer": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      },
+      "map": 0,
+      "input": {
+        "$starlark": "map"
+      },
+      "output": {
+        "$starlark": "[score / sum(output) if sum(output) > 0 else 1.0 / len(output) for score in output]"
+      }
+    }
+  ],
+  "input_maps": [
+    {
+      "$starlark": "input"
+    }
+  ],
+  "description": "A photo ranking function that identifies authentic cat photographs by evaluating authenticity, emotional resonance, and individual personality. It distinguishes candid, emotionally moving images from posed or artificial ones, serving photographers and content curators seeking meaningful feline photography that honors cats' true nature."
+}

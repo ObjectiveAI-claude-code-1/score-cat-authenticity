@@ -1,0 +1,14 @@
+[
+  {
+    "spec": "Rank the provided cat photos by how authentically they capture genuine, unguarded moments where the cat is being itself naturally rather than posed or arranged for the camera. Evaluate the cat's body language, facial expressions, and behaviors to determine whether the moment appears candid and natural. Photos showing the cat in relaxed, comfortable states engaged in real activities should rank significantly higher than photos where the cat appears awkwardly positioned, forced into poses, or showing signs of being arranged for the camera.",
+    "token": "60f260ed-9a1e-425d-9e74-2516b972b81a"
+  },
+  {
+    "spec": "Rank the provided cat photos by how well they create emotional connection and resonance between the viewer and the cat depicted. Evaluate which images most effectively evoke genuine human emotions such as joy, tenderness, vulnerability, curiosity, or affection. Assess how well each photograph reveals the cat's inner emotional life and creates empathy and understanding in the viewer. Higher-ranked photos should be those that deeply move viewers and create meaningful emotional bridges with the cat's spirit.",
+    "token": "e1f3635f-797a-4400-bd8e-40e71fe80df6"
+  },
+  {
+    "spec": "Score how well this individual cat photo reveals the specific, unique personality and individual character of the cat depicted. Evaluate whether the image captures distinctive traits, behavioral quirks, habits, or preferences that make this particular cat unique and memorable. Higher scores should go to photos that help the viewer feel they truly know the individual cat—its humor, its nature, its specific way of being in the world. Generic cat behavior should score lower than photos that reveal something distinctive about this specific cat's personality.",
+    "token": "79805f3c-72b1-42b4-bb43-b2712aece53b"
+  }
+]
